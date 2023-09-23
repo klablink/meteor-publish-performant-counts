@@ -11,7 +11,11 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@0.9.1');
+  api.use([
+    'ecmascript',
+    'mongo'
+  ], ['client', 'server']);
+
   api.addFiles('lib/server.js', 'server');
   api.addFiles('lib/client.js', 'client');
   api.export(['Counter']);
